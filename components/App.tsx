@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from "./common/Header";
 import HomePage from "../pages/HomePage";
 import MoviePage from "../pages/MoviePage";
+import { GlobalStyle } from "./common/GlobalStyles";
 
 const App: FC = () => {
     return(
@@ -16,6 +17,7 @@ const App: FC = () => {
                     <Redirect from='*' to='/'/>
                 </Switch>
             </BrowserRouter>
+            <GlobalStyle />
         </>
     )
 }
