@@ -20,7 +20,7 @@ export const GlobalStyle = () => (
             body {background:#fff}
             body,th,td,input,select,textarea,button {
                 
-                line-height:1.5;
+                line-height:1;
                 font-family: 'Noto Sans KR', sans-serif;
                 color:#333
             } /* color값은 디자인가이드에 맞게사용 */
