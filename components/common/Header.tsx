@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import {FC} from 'react';
+import {  NavLink  } from 'react-router-dom';
 import styled from "@emotion/styled";
 import {  useLocation } from 'react-router';
 
 
-type ComponentProps = {
-    current: boolean,
+
+type ComponentProps2 = {
+    className?: string
+    label: string,
+    current? : boolean,
 }
 
 
@@ -19,13 +23,26 @@ const HeaderBox = styled('header')`
     
 `;
 
-const LinkTag = styled(Link)`
+const LinkTag = styled(NavLink)`
     display: block;
     padding: 1rem;
     box-sizing: border-box;
-    border-bottom:3px solid ${(props:ComponentProps) => (props.current ? '#3498db' : 'transparent')};
+    border-bottom:3px solid transparent;
+    &.active{
+        border-bottom:3px solid #3498db;
+    }
+    
 `;
 
+// const Component: FC<ComponentProps2> = ({
+//     label,
+//     className,
+// }) => <div className={className} >{label}</div>
+//
+// const StyledComponent0 = styled(Component)`
+//     color: red;
+//     border-bottom:3px solid ${(props) => (props.current ? '#3498db' : 'transparent')};
+// `
 
 const Header = () => {
     const location = useLocation();
@@ -34,8 +51,9 @@ const Header = () => {
     return(
         <>
             <HeaderBox>
-                <LinkTag to="/" current={location.pathname === '/'}>Home</LinkTag>
-                <LinkTag to="/movie" current={location.pathname === '/movie'}>Movie</LinkTag>
+                {/*<StyledComponent0 label="Yea! No need to re-type this label prop."  current={true} />*/}
+                <LinkTag exact to="/">Home</LinkTag>
+                <LinkTag to="/movie">Movie</LinkTag>
             </HeaderBox>
         </>
     )
