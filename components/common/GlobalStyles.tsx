@@ -17,7 +17,7 @@ export const GlobalStyle = () => (
             input:checked[type='checkbox'] {background-color:#666; -webkit-appearance:checkbox}
             button,input[type='button'],input[type='submit'],input[type='reset'],input[type='file'] {-webkit-appearance:button; border-radius:0}
             input[type='search']::-webkit-search-cancel-button {-webkit-appearance:none}
-            body {background:#fff}
+            
             body,th,td,input,select,textarea,button {
                 
                 line-height:1;
@@ -38,6 +38,13 @@ export const GlobalStyle = () => (
                 html{
                     font-size: 16px;
                 }
+            }
+            
+            body {
+                background-color: #fff;
+            }
+            body.dark {
+                background-color: #000;
             }
             
             

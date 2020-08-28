@@ -3,6 +3,8 @@ import {FC} from 'react';
 import {  NavLink  } from 'react-router-dom';
 import styled from "@emotion/styled";
 import {  useLocation } from 'react-router';
+import { faCamera } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
 
@@ -54,6 +56,7 @@ const Header = () => {
                 {/*<StyledComponent0 label="Yea! No need to re-type this label prop."  current={true} />*/}
                 <LinkTag exact to="/">Home</LinkTag>
                 <LinkTag to="/movie">Movie</LinkTag>
+                <FontAwesomeIcon icon={faCamera} />
             </HeaderBox>
         </>
     )
