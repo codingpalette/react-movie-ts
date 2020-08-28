@@ -33,6 +33,8 @@ export const GlobalStyle = () => (
             
             html{
                 font-size: 14px;
+                width: 100%;
+                height: 100%;
             }
             @media screen and (min-width:768px) {
                 html{
@@ -41,10 +43,17 @@ export const GlobalStyle = () => (
             }
             
             body {
+                width: 100%;
+                height: 100%;
                 background-color: #fff;
             }
             body.dark {
                 background-color: #000;
+            }
+            
+            #root{
+                width: 100%;
+                height: 100%;
             }
             
             

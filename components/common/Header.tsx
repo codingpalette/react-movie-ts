@@ -3,6 +3,11 @@ import {FC} from 'react';
 import {  NavLink  } from 'react-router-dom';
 import styled from "@emotion/styled";
 import {  useLocation } from 'react-router';
+import { useSelector, useDispatch } from 'react-redux';
+import { LayoutDark } from '../../actions/layout'
+import { RootState } from '../../reducers';
+import { LayoutState } from '../../reducers/layout'
+
 import { faCamera } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -47,8 +52,16 @@ const LinkTag = styled(NavLink)`
 // `
 
 const Header = () => {
+    const { darkMode } = useSelector<RootState, LayoutState>((state) => state.layout);
+    const dispatch = useDispatch();
+
     const location = useLocation();
+
     console.log(location)
+
+    const onClick = () => {
+        dispatch(LayoutDark())
+    }
 
     return(
         <>
@@ -57,6 +70,10 @@ const Header = () => {
                 <LinkTag exact to="/">Home</LinkTag>
                 <LinkTag to="/movie">Movie</LinkTag>
                 <FontAwesomeIcon icon={faCamera} />
+
+                <div>{ !darkMode && '다크모드 아님' }</div>
+                <div>{ darkMode && '다크모드 임' }</div>
+                <button onClick={onClick}>클릭</button>
             </HeaderBox>
         </>
     )

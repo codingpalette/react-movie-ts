@@ -6,18 +6,27 @@ import HomePage from "../pages/HomePage";
 import MoviePage from "../pages/MoviePage";
 import { GlobalStyle } from "./common/GlobalStyles";
 
+import styled from '@emotion/styled';
+
+const Layout = styled('div')`
+    width: 100%;
+   
+`;
+
 const App: FC = () => {
     return(
         <>
-            <BrowserRouter>
-                <Header />
-                <Switch>
-                    <Route path='/' exact component={HomePage} />
-                    <Route path='/movie' component={MoviePage} />
-                    <Redirect from='*' to='/'/>
-                </Switch>
-            </BrowserRouter>
-            <GlobalStyle />
+            <Layout>
+                <BrowserRouter>
+                    <Header />
+                    <Switch>
+                        <Route path='/' exact component={HomePage} />
+                        <Route path='/movie' component={MoviePage} />
+                        <Redirect from='*' to='/'/>
+                    </Switch>
+                </BrowserRouter>
+                <GlobalStyle />
+            </Layout>
         </>
     )
 }
