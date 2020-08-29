@@ -1,5 +1,3 @@
-import {LayoutDarkAction} from "./layout";
-
 export const MOVIE_LOAD_REQUEST = 'MOVIE_LOAD_REQUEST' as const;
 export const MOVIE_LOAD_SUCCESS = 'MOVIE_LOAD_SUCCESS' as const;
 export const MOVIE_LOAD_FAILURE = 'MOVIE_LOAD_FAILURE' as const;

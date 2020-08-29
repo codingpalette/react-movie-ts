@@ -2,7 +2,7 @@ import { all, fork } from 'redux-saga/effects'
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 import movieSaga from "./movie";
 

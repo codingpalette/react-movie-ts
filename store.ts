@@ -14,11 +14,13 @@ const firstMiddleware = (store: MiddlewareAPI) => (next: Dispatch<AnyAction>) =>
 const sagaMiddleware = createSagaMiddleware();
 
 const enhancer = process.env.NODE_ENV === 'production'
-    ? compose(applyMiddleware(firstMiddleware))
+    ? compose(applyMiddleware(firstMiddleware, sagaMiddleware))
     : composeWithDevTools(
-        applyMiddleware(firstMiddleware)
+        applyMiddleware(firstMiddleware, sagaMiddleware)
     );
 
 const store = createStore(reducer, enhancer);
+
+sagaMiddleware.run(rootSaga);
 
 export default store;

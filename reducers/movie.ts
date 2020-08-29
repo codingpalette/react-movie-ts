@@ -4,8 +4,6 @@ import {
     MOVIE_LOAD_REQUEST, MOVIE_LOAD_SUCCESS, MOVIE_LOAD_FAILURE,
     movieRequestAction, movieSuccessAction, movieFailureAction
 } from '../actions/movie';
-import {LAYOUT_DARK} from "../actions/layout";
-
 
 
 
