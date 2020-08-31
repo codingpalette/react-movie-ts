@@ -10,7 +10,9 @@ import styled from '@emotion/styled';
 
 const Layout = styled('div')`
     width: 100%;
-   
+    display: grid;
+    gap: 1rem;
+    box-sizing: border-box;
 `;
 
 const App: FC = () => {
