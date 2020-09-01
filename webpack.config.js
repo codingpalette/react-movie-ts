@@ -34,8 +34,8 @@ module.exports = (env, options) => {
                         loader: 'url-loader',
                         options: {
                             name: '[name].[ext]?[hash]',  // 파일명 또는 파일해쉬값
-                            publicPath: './dist/',  // 빌드 후 limit가 넘는 파일 위치
-                            limit: 10000  // 10000byte 제한
+                            publicPath: './dist',  // 빌드 후 limit가 넘는 파일 위치
+                            // limit: 10000  // 10000byte 제한
                         }
                     }
                 },
