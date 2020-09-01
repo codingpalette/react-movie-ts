@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {FunctionComponent, ReactNode} from 'react';
+import {FunctionComponent} from 'react';
 import styled from "@emotion/styled";
-// import popcorn from '../../assets/popcorn.jpg';
+import popcorn from '../../assets/popcorn.jpg';
 
 const ListTag = styled('li')`
     padding: 1rem;
@@ -27,7 +27,7 @@ const List:FunctionComponent<Props> = ({data}) => {
         <>
             <ListTag>
                 <div className="img_box">
-                    <img src={ `https://image.tmdb.org/t/p/w300${data.poster_path}`} alt=""/>
+                    <img src={ popcorn} alt=""/>
                 </div>
                 {data.title}
             </ListTag>

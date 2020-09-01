@@ -28,7 +28,7 @@ module.exports = (env, options) => {
                     }
                 },
                 {
-                    test: /\.()$/,  // 이미지 확장자 regExp
+                    test: /\.(png|jpg|gif|svg)$/,  // 이미지 확장자 regExp
                     exclude: /node_modules/,
                     use: {
                         loader: 'url-loader',
