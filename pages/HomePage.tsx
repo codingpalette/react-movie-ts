@@ -17,16 +17,16 @@ const HomePage = () => {
 
     return(
         <>
-            <div>
+            <ListBox>
                 {list && list.results.length >= 1 && (
                     <>
-                        {list.results.map((list: any, i: string | number | null | undefined) => (
-                            <List key={i} />
+                        {list.results.map((list:any, i:any) => (
+                            <List key={i} data={list} />
                         ))}
                     </>
                 )}
 
-            </div>
+            </ListBox>
         </>
     )
 }
