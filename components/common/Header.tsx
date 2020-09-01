@@ -25,7 +25,6 @@ const HeaderBox = styled('header')`
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #ccc;
     box-sizing: border-box;
     
 `;

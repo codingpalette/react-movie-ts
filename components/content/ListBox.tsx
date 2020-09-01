@@ -11,7 +11,7 @@ const UlTag = styled('ul')`
         grid-template-columns: repeat(4, 1fr);
     }
     @media screen and (min-width: 1024px) {
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(6, 1fr);
     }
 `;
 
