@@ -20,7 +20,7 @@ const HomePage = () => {
             <ListBox>
                 {list && list.results.length >= 1 && (
                     <>
-                        {list.results.map((list:any, i:any) => (
+                        {list.results.map((list:object, i:number) => (
                             <List key={i} data={list} />
                         ))}
                     </>
