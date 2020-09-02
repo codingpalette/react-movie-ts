@@ -7,6 +7,7 @@ const UlTag = styled('ul')`
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 1rem;
     @media screen and (min-width:768px) {
         grid-template-columns: repeat(4, 1fr);
     }

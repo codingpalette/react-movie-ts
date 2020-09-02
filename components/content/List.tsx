@@ -12,16 +12,16 @@ const ListTag = styled('li')`
     padding: 1rem;
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     box-sizing: border-box;
-    &:hover{
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    }
+    //&:hover{
+    //    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    //}
      &.dark{
         & a {
             color: #fff;
         }
-        &:hover{
-            box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
-        }
+        //&:hover{
+        //    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+        //}
     }
     & .img_box{
        padding-bottom: 150%;
@@ -47,7 +47,7 @@ const List:FunctionComponent<Props> = ({data}) => {
     const { darkMode } = useSelector<RootState, LayoutState>((state) => state.layout);
     return(
         <>
-            <ListTag className={ !darkMode ? 'dark' : '' }>
+            <ListTag className={ darkMode ? 'dark' : '' }>
                 <Link to={`movie/${data.id}`}>
                     <div className="img_box">
                         <img src={ data.poster_path? `https://image.tmdb.org/t/p/w300${data.poster_path}` : popcorn} alt=""/>

@@ -27,7 +27,9 @@ const HeaderBox = styled('header')`
     justify-content: center;
     box-sizing: border-box;
     padding: 0 1rem;
-   
+    &.dark a{
+        color: #fff;
+    }
     
 `;
 
@@ -39,9 +41,7 @@ const LinkTag = styled(NavLink)`
     &.active{
         border-bottom:3px solid #3498db;
     }
-    &.dark{
-        color: #fff;
-    }
+    
 `;
 
 const IconBtn = styled('button')`
@@ -76,12 +76,12 @@ const Header = () => {
 
     return(
         <>
-            <HeaderBox >
+            <HeaderBox className={ darkMode ? 'dark' : '' } >
                 {/*<StyledComponent0 label="Yea! No need to re-type this label prop."  current={true} />*/}
-                <LinkTag className={ !darkMode ? 'dark' : '' } exact to="/">Home</LinkTag>
-                <LinkTag className={ !darkMode ? 'dark' : '' } to="/movie">Movie</LinkTag>
-                <IconBtn className={ !darkMode ? 'dark' : '' } onClick={onClick}>
-                    {!darkMode ? (
+                <LinkTag exact to="/">Home</LinkTag>
+                <LinkTag to="/search">Search</LinkTag>
+                <IconBtn className={ darkMode ? 'dark' : '' } onClick={onClick}>
+                    {darkMode ? (
                         <FontAwesomeIcon icon={faSun} />
                     ) : (
                         <FontAwesomeIcon icon={faMoon} />

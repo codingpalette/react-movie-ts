@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from "./common/Header";
 import HomePage from "../pages/HomePage";
 import MoviePage from "../pages/MoviePage";
+import SearchPage from "../pages/SearchPage";
 import { GlobalStyle } from "./common/GlobalStyles";
 import styled from '@emotion/styled';
 
@@ -25,11 +26,12 @@ const App: FC = () => {
     const { darkMode } = useSelector<RootState, LayoutState>((state) => state.layout);
     return(
         <>
-            <Layout className={ !darkMode ? 'dark' : '' }>
+            <Layout className={ darkMode ? 'dark' : '' }>
                 <BrowserRouter>
                     <Header />
                     <Switch>
                         <Route path='/' exact component={HomePage} />
+                        <Route path='/search' component={SearchPage} />
                         <Route path='/movie' component={MoviePage} />
                         <Redirect from='*' to='/'/>
                     </Switch>
