@@ -4,11 +4,11 @@ import {  NavLink  } from 'react-router-dom';
 import styled from "@emotion/styled";
 import {  useLocation } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
-import { LayoutDark } from '../../actions/layout'
+import { LayoutDark } from '../../actions/layout';
 import { RootState } from '../../reducers';
-import { LayoutState } from '../../reducers/layout'
+import { LayoutState } from '../../reducers/layout';
 
-import { faCamera } from "@fortawesome/free-solid-svg-icons"
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
@@ -26,6 +26,8 @@ const HeaderBox = styled('header')`
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    padding: 0 1rem;
+   
     
 `;
 
@@ -37,7 +39,17 @@ const LinkTag = styled(NavLink)`
     &.active{
         border-bottom:3px solid #3498db;
     }
-    
+    &.dark{
+        color: #fff;
+    }
+`;
+
+const IconBtn = styled('button')`
+    display: block;
+    margin-left: auto;
+     &.dark{
+        color: #fff;
+    }
 `;
 
 // const Component: FC<ComponentProps2> = ({
@@ -64,15 +76,17 @@ const Header = () => {
 
     return(
         <>
-            <HeaderBox>
+            <HeaderBox >
                 {/*<StyledComponent0 label="Yea! No need to re-type this label prop."  current={true} />*/}
-                <LinkTag exact to="/">Home</LinkTag>
-                <LinkTag to="/movie">Movie</LinkTag>
-                <FontAwesomeIcon icon={faCamera} />
-
-                <div>{ !darkMode && '다크모드 아님' }</div>
-                <div>{ darkMode && '다크모드 임' }</div>
-                <button onClick={onClick}>클릭</button>
+                <LinkTag className={ !darkMode ? 'dark' : '' } exact to="/">Home</LinkTag>
+                <LinkTag className={ !darkMode ? 'dark' : '' } to="/movie">Movie</LinkTag>
+                <IconBtn className={ !darkMode ? 'dark' : '' } onClick={onClick}>
+                    {!darkMode ? (
+                        <FontAwesomeIcon icon={faSun} />
+                    ) : (
+                        <FontAwesomeIcon icon={faMoon} />
+                    )}
+                </IconBtn>
             </HeaderBox>
         </>
     )
