@@ -1,10 +1,15 @@
 import * as React from 'react';
+import InputBox from "../components/common/InputBox";
+
+
 
 
 const SearchPage = () => {
     return(
         <>
-            <div>asdas</div>
+            <div>
+                <InputBox />
+            </div>
         </>
     )
 };
