@@ -12,13 +12,23 @@ export interface MovieState {
     movieDone: boolean,
     movieError: any
     list: any,
+
+    movieDetail: any,
+    movieDetailLoading: boolean,
+    movieDetailDone: boolean,
+    movieDetailError: any
 }
 
 const initialState: MovieState = {
-    movieLoading: false, // 로그인 시도중
+    movieLoading: false,
     movieDone: false,
     movieError: null,
     list: null,
+
+    movieDetail: null,
+    movieDetailLoading: false,
+    movieDetailDone: false,
+    movieDetailError: null
 };
 
 type MovieReducerActions = movieRequestAction | movieSuccessAction | movieFailureAction ;

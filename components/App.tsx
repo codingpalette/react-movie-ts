@@ -32,7 +32,7 @@ const App: FC = () => {
                     <Switch>
                         <Route path='/' exact component={HomePage} />
                         <Route path='/search' component={SearchPage} />
-                        <Route path='/movie' component={MoviePage} />
+                        <Route path='/movie/:id' component={MoviePage} />
                         <Redirect from='*' to='/'/>
                     </Switch>
                 </HashRouter>
