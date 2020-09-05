@@ -2,7 +2,9 @@ import produce from 'immer';
 
 import {
     MOVIE_LOAD_REQUEST, MOVIE_LOAD_SUCCESS, MOVIE_LOAD_FAILURE,
-    movieRequestAction, movieSuccessAction, movieFailureAction
+    movieRequestAction, movieSuccessAction, movieFailureAction,
+    MOVIE_DETAIL_REQUEST, MOVIE_DETAIL_SUCCESS, MOVIE_DETAIL_FAILURE,
+    movieDetailRequestAction, movieDetailSuccessAction, movieDetailFailureAction
 } from '../actions/movie';
 
 
@@ -31,7 +33,7 @@ const initialState: MovieState = {
     movieDetailError: null
 };
 
-type MovieReducerActions = movieRequestAction | movieSuccessAction | movieFailureAction ;
+type MovieReducerActions = movieRequestAction | movieSuccessAction | movieFailureAction | movieDetailRequestAction | movieDetailSuccessAction| movieDetailFailureAction ;
 
 const movieReducer = (prevState = initialState, action: MovieReducerActions) => {
     return produce(prevState, (draft) => {
@@ -50,6 +52,20 @@ const movieReducer = (prevState = initialState, action: MovieReducerActions) => 
                 draft.movieLoading = false;
                 draft.movieError = action.error;
                 break;
+            case MOVIE_DETAIL_REQUEST:
+                draft.movieDetailLoading = true;
+                draft.movieDetailDone = false;
+                draft.movieDetailError = null;
+                break;
+            case MOVIE_DETAIL_SUCCESS:
+                draft.movieDetailLoading = false;
+                draft.movieDetail = action.data;
+                draft.movieDone = true;
+                break;
+            case MOVIE_DETAIL_FAILURE:
+                draft.movieDetailLoading = false;
+                draft.movieDetailError = action.error;
+                break
             default:
                 break;
         }
